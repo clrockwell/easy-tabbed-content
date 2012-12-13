@@ -14,9 +14,9 @@
 }
   .tab a
 	{
-		color: #FFF;
-	  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.55);
-		background: #CBCBCB; /* Old browsers */
+    color: #FFF;
+    text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.55);
+    background: #CBCBCB; /* Old browsers */
     background: -moz-linear-gradient(top, #CBCBCB 0%, #E0E0E0 100%); /* FF3.6+ */
     background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#CBCBCB), color-stop(100%,#E0E0E0)); /* Chrome,Safari4+ */
     background: -webkit-linear-gradient(top, #CBCBCB 0%,#E0E0E0 100%); /* Chrome10+,Safari5.1+ */
@@ -24,4 +24,4 @@
     background: -ms-linear-gradient(top, #CBCBCB 0%,#E0E0E0 100%); /* IE10+ */
     background: linear-gradient(top, #CBCBCB 0%,#E0E0E0 100%); /* W3C */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#CBCBCB', endColorstr='#E0E0E0',GradientType=0 ); /* IE6-9 */
-	}
+  }
