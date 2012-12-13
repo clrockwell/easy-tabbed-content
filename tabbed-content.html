@@ -1,229 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>Easy Tabs</title>
+  <style type="text/css">  
+	  /* temp container to show centered */
+	  .temporary-container {width: 950px;margin: 0 auto;}	
+	  /* some styles that are commonly handled by a reset */
+	  ul{margin: 0;padding: 0;}
+	  li{list-style-type: none;}	
+  </style>
+  <style type="text/css">
+    @import url('c/easy-tabs.css');
+    @import url('c/silver-gradient.css');
+  </style>
+  <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+  <script type="text/javascript" src="j/easy-tabs.js"></script>
+</head>
+<body>
+  <div class="temporary-container">
 
-<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
-<script type="text/javascript">
-  $(document).ready(function() {
-		// start on the first tab
-		var starting_tab = 1;
-		// For ease of use, starting_tab
-		// takes a more easily understood value than 0
-		// and just handles it
-	  hide_content(starting_tab - 1);
-		// listen for mouse/keyboard
-		// on the tabs
-		$('.tab').each(function(index, el) {
-		  $(this).click(function(event) {
-			  hide_content(index);
-				// stop link action
-				return false;
-			});
-		});
-	})
+		<div class="tabbed-content with-static static-right split-2-1">
 	
-	/**
-	 * Hide all content except with_exception_of
-	 * @param int with_exception_of
-	 *   indicates which content block should be visible
-	 * 	 Remember: lists, arrays, whatever start at 0, not 1
-	 */
-	function hide_content(with_exception_of)
-	{
-		// we have content blocks and the
-		// corresponding tabs
-		$content_blocks = $('.content-dynamic');
-		$content_tabs = $('.tab');
-		// first remove active-content from any
-		$($content_blocks)
-			.removeClass('active-content')
-			.addClass('inactive-content');
-		// secondly, use with_exception_of to show the correct one
-		$($content_blocks[with_exception_of])
-		  .removeClass('inactive-content')
-			.addClass('active-content');
-		
-		// remove the active state from all tabs
-		$($content_tabs)
-		  .removeClass('active-tab');
-		// add the active state to the active tab
-		$($content_tabs[with_exception_of])
-		  .addClass('active-tab');
-	}
-	
-</script>
-
-<style type="text/css">
-  @import url('c/silver-gradient.css');
-	.temporary-container {width: 950px;margin: 0 auto;}
-	
-	/* some styles that are commonly handled by a reset */
-	ul{margin: 0;padding: 0;}
-	li{list-style-type: none;}
-	
-	
-	/*
-	-------------------------------
-	   on to the actual styling 
-	-------------------------------*/
-	
-	/** modules **/
-	.horizontal-tabs
-	{
-		width: 100%;
-		display: table;
-		table-layout: fixed;
-		text-align: center;
-	}
-	.horizontal-tabs li
-	{
-		display: table-cell;
-	}	
-	.content-dynamic-container,
-	.content-dynamic,
-	.content-static
-	{
-		width: 100%;
-		-webkit-box-sizing: border-box; 
-	     -moz-box-sizing: border-box;    
-	          box-sizing: border-box;         
-	}
-	  .split-2-1 .content-dynamic-container
-		{
-			width: 66%;
-		}
-		.split-2-1 .content-static
-		{
-			width: 34%;
-		}
-	  .with-static.static-right .content-container > div
-		{
-			float: left;
-		}
-		
-		
-	/* States */
-	.inactive-content 
-	{
-	  display: none;
-	}
-	.active-content
-	{
-		display: block;
-	}
-	
-	/* dynamic content */
-	.content-dynamic
-	{
-		padding: 0 1.5em 0 2.375em;
-	}
-	/* static-content */
-	.content-static
-	{
-		padding: 0 1em;
-	}
-	
-	/* tabs layout */
-	.tab
-	{
-		text-transform: uppercase;
-		font-size: 1.7893em;
-		-webkit-box-sizing: border-box; 
-	     -moz-box-sizing: border-box;    
-	          box-sizing: border-box;
-		padding: 2px;
-	}
-	  .tab a
-		{
-			display: inline-block;
-			width: 100%;
-			text-decoration: none;
-			padding: .2292em 0;
-		}
-	
-</style>
-
-<div class="temporary-container">
-
-<div class="tabbed-content with-static static-right split-2-1">
-	
-  <!------- < TABS > ---------------->
-  <ul class="tabs horizontal-tabs silver-gradient">
-    <li class="tab active-tab"><a href="#tab1">Agenda</a></li>
-    <li class="tab"><a href="#tab2">Speakers</a></li>
-    <li class="tab"><a href="#tab3">Hotels</a></li>
-    <li class="tab"><a href="#tab4">Register</a></li>
-  </ul>
-  
-  <!------- < Content Container > ---------------->
-  <div class="content-container">
-    <div class="content-dynamic-container">
-    	
-      <div id="tab1" class="content-dynamic">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dictum 
-        nibh at dolor interdum id gravida tortor dignissim. Vivamus nec placerat felis. 
-        Cras gravida, elit ac fermentum adipiscing, augue turpis interdum nulla, nec 
-        laoreet mauris lorem at ante. Nunc nisi diam, mollis id pellentesque vel, 
-        gravida a mauris. Sed risus orci, vestibulum non volutpat dictum, vulputate commodo arcu. 
-        Morbi non odio eget ligula interdum luctus. Nam lacinia, odio eu tempus pulvinar, 
-        ipsum metus posuere elit, quis blandit nibh libero a nibh.</p>
-				<p>Aliquam ut mi sed nisl placerat accumsan. Proin nunc tortor, placerat 
-        sed adipiscing ut, aliquam lacinia massa. Aenean at tellus dui, eu tincidunt mi. 
-        Pellentesque ut lacus nec diam mattis egestas vitae vitae erat. 
-        Nam ligula magna, viverra quis sodales quis, molestie vitae dolor. Ut eget lacus 
-        erat, in porta lacus. Praesent in mauris justo, vel lobortis leo. Aliquam neque lacus, 
-        sodales in dictum eu, mattis quis justo. Suspendisse gravida faucibus rhoncus. 
-        In volutpat arcu faucibus metus ultrices quis rutrum ligula mattis. Vestibulum 
-        sed felis tortor, id tempus felis. Suspendisse potenti. </p>
-      </div>
-      
-      <div id="tab2" class="content-dynamic">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut augue ut orci 
-        molestie consectetur. Aenean ultricies tempor aliquam. Nam eu magna risus. 
-        Aenean rutrum placerat ligula ut ultrices. Duis id dolor tincidunt velit mollis 
-        cursus quis at neque. Pellentesque placerat tortor tortor. Donec tortor nunc, 
-        dictum eu blandit vitae, tincidunt faucibus orci. Proin fermentum dui at justo 
-        venenatis consequat in eget lorem. </p>
-      </div>
-      
-      <div id="tab3" class="content-dynamic">
-      	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis aliquam massa, 
-        nec tincidunt urna semper auctor. Pellentesque habitant morbi tristique senectus et netus et 
-        malesuada fames ac turpis egestas. Quisque posuere, augue at consectetur rhoncus, ante 
-        arcu tincidunt nisl, sit amet sodales libero ligula sit amet ligula. Sed quis diam mauris. 
-        Curabitur a erat nec nisl bibendum ullamcorper. Sed laoreet suscipit erat ac tempor. Nulla 
-        non nisl in turpis ullamcorper rhoncus. </p>
-      </div>
-      
-      <div id="tab4" class="content-dynamic">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis turpis a est 
-        tincidunt vehicula. Vivamus porta commodo est vitae faucibus. Donec rhoncus 
-        sollicitudin quam, eu aliquet magna rutrum ut. Vivamus nec mauris est. Nullam eleifend 
-        varius quam eu bibendum. Vestibulum tincidunt aliquet porta. Sed faucibus, sapien quis 
-        molestie consequat, dui lectus laoreet neque, at convallis ante felis tincidunt augue. 
-        Vivamus quis aliquet dui. Quisque justo augue, fermentum quis vestibulum a, congue vel enim. 
-        Integer felis lectus, adipiscing at mattis sit amet, tincidunt nec augue. Proin et ipsum magna, 
-        eu fringilla risus. Donec ut mollis elit. Nulla scelerisque nunc sed ipsum pulvinar quis tincidunt 
-        ligula porta. Suspendisse et turpis eu lectus consequat tristique. Integer vel odio massa, a varius libero.</p>
-				<p>Praesent ipsum sapien, vulputate non porta id, semper ac purus. In volutpat mauris et 
-        ipsum malesuada volutpat. Aliquam et tellus sem, eget condimentum eros. Nunc pretium ultrices 
-        sapien, tincidunt dapibus urna suscipit vitae. Ut arcu nulla, blandit a aliquet at, 
-        facilisis sed sem. Mauris mi leo, elementum eget mollis eu, bibendum in arcu. Nam sit amet 
-        felis et velit pellentesque eleifend. Sed eu lectus massa. In in congue orci. </p>
-      </div>
+  	<!------- < TABS > ---------------->
+  	<ul class="tabs horizontal-tabs silver-gradient">
+    	<li class="tab active-tab"><a href="#tab1">Tab 1</a></li>
+    	<li class="tab"><a href="#tab2">Tab 2</a></li>
+      <li class="tab"><a href="#tab3">Tab 3</a></li>
+      <li class="tab"><a href="#tab4">Tab 4</a></li>
+    </ul>
     
-		</div>
-    
-    <div class="content-static">
-      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis sagittis ipsum, 
-      sed feugiat mi porta sit amet. Vivamus in justo risus. Mauris placerat placerat enim, eu 
-      scelerisque tortor hendrerit quis. Suspendisse vitae velit diam. Vestibulum velit lacus, 
-      laoreet eget vestibulum at, consequat id lacus. Phasellus sed diam ut neque tristique molestie 
-      nec at ipsum. Curabitur pharetra aliquam mauris, blandit iaculis tellus venenatis sed. Praesent
-       malesuada feugiat nisi at posuere. Nunc et tortor nibh, vel tempor odio. Nunc eros orci, luctus at 
-       malesuada eu, bibendum ornare ipsum. Aliquam pellentesque eleifend magna, vitae convallis erat lobortis 
-       vel. Nam laoreet tristique nulla ut posuere.</p>
+    <!------- < Content Container > ---------------->
+    <div class="content-container">
+      <div class="content-dynamic-container">
+        
+        <div id="tab1" class="content-dynamic">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dictum 
+          nibh at dolor interdum id gravida tortor dignissim. Vivamus nec placerat felis. 
+          Cras gravida, elit ac fermentum adipiscing, augue turpis interdum nulla, nec 
+          laoreet mauris lorem at ante. Nunc nisi diam, mollis id pellentesque vel, 
+          gravida a mauris. Sed risus orci, vestibulum non volutpat dictum, vulputate commodo arcu. 
+          Morbi non odio eget ligula interdum luctus. Nam lacinia, odio eu tempus pulvinar, 
+          ipsum metus posuere elit, quis blandit nibh libero a nibh.</p>
+          <p>Aliquam ut mi sed nisl placerat accumsan. Proin nunc tortor, placerat 
+          sed adipiscing ut, aliquam lacinia massa. Aenean at tellus dui, eu tincidunt mi. 
+          Pellentesque ut lacus nec diam mattis egestas vitae vitae erat. 
+          Nam ligula magna, viverra quis sodales quis, molestie vitae dolor. Ut eget lacus 
+          erat, in porta lacus. Praesent in mauris justo, vel lobortis leo. Aliquam neque lacus, 
+          sodales in dictum eu, mattis quis justo. Suspendisse gravida faucibus rhoncus. 
+          In volutpat arcu faucibus metus ultrices quis rutrum ligula mattis. Vestibulum 
+          sed felis tortor, id tempus felis. Suspendisse potenti. </p>
+        </div>
+        
+        <div id="tab2" class="content-dynamic">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut augue ut orci 
+          molestie consectetur. Aenean ultricies tempor aliquam. Nam eu magna risus. 
+          Aenean rutrum placerat ligula ut ultrices. Duis id dolor tincidunt velit mollis 
+          cursus quis at neque. Pellentesque placerat tortor tortor. Donec tortor nunc, 
+          dictum eu blandit vitae, tincidunt faucibus orci. Proin fermentum dui at justo 
+          venenatis consequat in eget lorem. </p>
+        </div>
+        
+        <div id="tab3" class="content-dynamic">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis aliquam massa, 
+          nec tincidunt urna semper auctor. Pellentesque habitant morbi tristique senectus et netus et 
+          malesuada fames ac turpis egestas. Quisque posuere, augue at consectetur rhoncus, ante 
+          arcu tincidunt nisl, sit amet sodales libero ligula sit amet ligula. Sed quis diam mauris. 
+          Curabitur a erat nec nisl bibendum ullamcorper. Sed laoreet suscipit erat ac tempor. Nulla 
+          non nisl in turpis ullamcorper rhoncus. </p>
+        </div>
+        
+        <div id="tab4" class="content-dynamic">
+          <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis turpis a est 
+          tincidunt vehicula. Vivamus porta commodo est vitae faucibus. Donec rhoncus 
+          sollicitudin quam, eu aliquet magna rutrum ut. Vivamus nec mauris est. Nullam eleifend 
+          varius quam eu bibendum. Vestibulum tincidunt aliquet porta. Sed faucibus, sapien quis 
+          molestie consequat, dui lectus laoreet neque, at convallis ante felis tincidunt augue. 
+          Vivamus quis aliquet dui. Quisque justo augue, fermentum quis vestibulum a, congue vel enim. 
+          Integer felis lectus, adipiscing at mattis sit amet, tincidunt nec augue. Proin et ipsum magna, 
+          eu fringilla risus. Donec ut mollis elit. Nulla scelerisque nunc sed ipsum pulvinar quis tincidunt 
+          ligula porta. Suspendisse et turpis eu lectus consequat tristique. Integer vel odio massa, a varius libero.</p>
+          <p>Praesent ipsum sapien, vulputate non porta id, semper ac purus. In volutpat mauris et 
+          ipsum malesuada volutpat. Aliquam et tellus sem, eget condimentum eros. Nunc pretium ultrices 
+          sapien, tincidunt dapibus urna suscipit vitae. Ut arcu nulla, blandit a aliquet at, 
+          facilisis sed sem. Mauris mi leo, elementum eget mollis eu, bibendum in arcu. Nam sit amet 
+          felis et velit pellentesque eleifend. Sed eu lectus massa. In in congue orci. </p>
+        </div>
+      
+      </div>
+      <!-- /content-dynamic-container -->
+      <div class="content-static">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis sagittis ipsum, 
+        sed feugiat mi porta sit amet. Vivamus in justo risus. Mauris placerat placerat enim, eu 
+        scelerisque tortor hendrerit quis. Suspendisse vitae velit diam. Vestibulum velit lacus, 
+        laoreet eget vestibulum at, consequat id lacus. Phasellus sed diam ut neque tristique molestie 
+        nec at ipsum. Curabitur pharetra aliquam mauris, blandit iaculis tellus venenatis sed. Praesent
+         malesuada feugiat nisi at posuere. Nunc et tortor nibh, vel tempor odio. Nunc eros orci, luctus at 
+         malesuada eu, bibendum ornare ipsum. Aliquam pellentesque eleifend magna, vitae convallis erat lobortis 
+         vel. Nam laoreet tristique nulla ut posuere.</p>
+      </div>
+      <!-- /content-static -->
     </div>
-    
+    <!-- /content-container -->
   </div>
-  
-</div>
-
-</div>
+  <!-- /tabbed-content -->
+  </div>
+</body>
+</html>
