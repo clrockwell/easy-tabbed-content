@@ -3,75 +3,74 @@
 
 
 /** modules **/
-	.horizontal-tabs
-	{
-		width: 100%;
-		display: table;
-		table-layout: fixed;
-		text-align: center;
-	}
-	.horizontal-tabs li
-	{
-		display: table-cell;
-	}	
-	.content-dynamic-container,
-	.content-dynamic,
-	.content-static
-	{
-		width: 100%;
-		-webkit-box-sizing: border-box; 
-	     -moz-box-sizing: border-box;    
-	          box-sizing: border-box;         
-	}
-	  .split-2-1 .content-dynamic-container
-		{
-			width: 66%;
-		}
-		.split-2-1 .content-static
-		{
-			width: 34%;
-		}
-	  .with-static.static-right .content-container > div
-		{
-			float: left;
-		}
-		
-		
-	/* States */
-	.inactive-content 
-	{
-	  display: none;
-	}
-	.active-content
-	{
-		display: block;
-	}
-	
+  .horizontal-tabs
+  {
+    width: 100%;
+    display: table;
+    table-layout: fixed;
+    text-align: center;
+  }
+  .horizontal-tabs li
+  {
+    display: table-cell;
+  }	
+  .content-dynamic-container,
+  .content-dynamic,
+  .content-static
+  {
+    width: 100%;
+    -webkit-box-sizing: border-box; 
+       -moz-box-sizing: border-box;    
+            box-sizing: border-box;         
+  }
+    .split-2-1 .content-dynamic-container
+    {
+      width: 66%;
+    }
+    .split-2-1 .content-static
+    {
+      width: 34%;
+    }
+    .with-static.static-right .content-container > div
+    {
+      float: left;
+    }
+
+  /* States */
+  .inactive-content 
+  {
+    display: none;
+  }
+  .active-content
+  {
+    display: block;
+  }
+  
 	/* dynamic content */
-	.content-dynamic
-	{
-		padding: 0 1.5em 0 2.375em;
-	}
-	/* static-content */
-	.content-static
-	{
-		padding: 0 1em;
-	}
-	
-	/* tabs layout */
-	.tab
-	{
-		text-transform: uppercase;
-		font-size: 1.7893em;
-		-webkit-box-sizing: border-box; 
-	     -moz-box-sizing: border-box;    
-	          box-sizing: border-box;
-		padding: 2px;
-	}
-	  .tab a
-		{
-			display: inline-block;
-			width: 100%;
-			text-decoration: none;
-			padding: .2292em 0;
-		}
+  .content-dynamic
+  {
+    padding: 0 1.5em 0 2.375em;
+  }
+  /* static-content */
+  .content-static
+  {
+    padding: 0 1em;
+  }
+
+  /* tabs layout */
+  .tab
+  {
+    text-transform: uppercase;
+    font-size: 1.7893em;
+    -webkit-box-sizing: border-box; 
+       -moz-box-sizing: border-box;    
+            box-sizing: border-box;
+    padding: 2px;
+  }
+    .tab a
+    {
+      display: inline-block;
+      width: 100%;
+      text-decoration: none;
+      padding: .2292em 0;
+    }
