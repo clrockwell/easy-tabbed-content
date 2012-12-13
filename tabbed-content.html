@@ -1,7 +1,49 @@
 
 <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript">
-  
+  $(document).ready(function() {
+		// start on the first tab
+		var starting_tab = 1;
+		// For ease of use, starting_tab
+		// takes a more easily understood value than 0
+		// If you're interested in why we subtract 1
+		// read up on arrays, lists, etc.  but the jist is that
+		// 4 items in javascript are items 0, 1, 2, 3 NOT 1, 2, 3, 4
+		// Counting starts at 0
+	  hide_content(starting_tab - 1);
+		// listen for mouse/keyboard
+		// on the tabs
+		$('.tab').each(function(index, el) {
+		  $(this).click(function(event) {
+			  hide_content(index);
+			});
+		});
+	})
+	
+	/**
+	 * Hide all content except with_exception_of
+	 * @param int with_exception_of
+	 *   indicates which content block should be visible
+	 * 	 Remember: lists, arrays, whatever start at 0, not 1
+	 */
+	function hide_content(with_exception_of)
+	{
+		// we have content blocks and the
+		// corresponding tabs
+		$content_blocks = $('.content-dynamic');
+		$content_tabs = $('.tab');
+		// first remove active-content from any
+		$($content_blocks)
+			.removeClass('active-content')
+			.addClass('inactive-content');
+		// secondly, use with_exception_of to show the correct one
+		$($content_blocks[with_exception_of]).removeClass('inactive-content').addClass('active-content');
+		
+		// remove the active state from all tabs
+		$($content_tabs).removeClass('active-tab');
+		$($content_tabs[with_exception_of]).addClass('active-tab');
+	}
+	
 </script>
 
 <style type="text/css">
@@ -14,6 +56,10 @@
 	.content-dynamic-container {background: #0FF;}
 	.content-dynamic {height:400px}
 	.content-static {background: #CFF}
+	#tab1 {background:#066}
+	#tab2 {background:#999}
+	#tab2 {background:#666}
+	#tab4 {background:#444}
 	
 	/* some styles that are commonly handled by a reset */
 	ul{margin: 0;padding: 0;}
@@ -65,6 +111,7 @@
 	{
 		display: block;
 	}
+	
 	
 </style>
 
