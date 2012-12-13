@@ -13,6 +13,8 @@
 		$('.tab').each(function(index, el) {
 		  $(this).click(function(event) {
 			  hide_content(index);
+				// stop link action
+				return false;
 			});
 		});
 	})
@@ -34,22 +36,26 @@
 			.removeClass('active-content')
 			.addClass('inactive-content');
 		// secondly, use with_exception_of to show the correct one
-		$($content_blocks[with_exception_of]).removeClass('inactive-content').addClass('active-content');
+		$($content_blocks[with_exception_of])
+		  .removeClass('inactive-content')
+			.addClass('active-content');
 		
 		// remove the active state from all tabs
-		$($content_tabs).removeClass('active-tab');
-		$($content_tabs[with_exception_of]).addClass('active-tab');
+		$($content_tabs)
+		  .removeClass('active-tab');
+		// add the active state to the active tab
+		$($content_tabs[with_exception_of])
+		  .addClass('active-tab');
 	}
 	
 </script>
 
 <style type="text/css">
-
+  @import url('c/silver-gradient.css');
 	.temporary-container {width: 950px;margin: 0 auto;}
 	
 	/* temp styles to help differentiate while testing */
-	.tabs	{background-color: #000;}
-	.tab {background-color: #CCC;}
+	
 	.content-dynamic-container {background: #0FF;}
 	.content-dynamic {height:400px}
 	.content-static {background: #CFF}
@@ -62,7 +68,11 @@
 	ul{margin: 0;padding: 0;}
 	li{list-style-type: none;}
 	
-	/* on to the actual styling */
+	
+	/*
+	-------------------------------
+	   on to the actual styling 
+	-------------------------------*/
 	
 	/** modules **/
 	.horizontal-tabs
@@ -109,6 +119,23 @@
 		display: block;
 	}
 	
+	/* tabs layout */
+	.tab
+	{
+		text-transform: uppercase;
+		font-size: 1.7893em;
+		-webkit-box-sizing: border-box; 
+	     -moz-box-sizing: border-box;    
+	          box-sizing: border-box;
+		padding: 2px;
+	}
+	  .tab a
+		{
+			display: inline-block;
+			width: 100%;
+			text-decoration: none;
+			padding: .2292em 0;
+		}
 	
 </style>
 
