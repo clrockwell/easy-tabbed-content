@@ -1,0 +1,113 @@
+
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+<script type="text/javascript">
+
+</script>
+
+<style type="text/css">
+
+	.temporary-container {width: 950px;margin: 0 auto;}
+	
+	/* temp styles to help differentiate while testing */
+	.tabs	{background-color: #000;}
+	.tab {background-color: #CCC;}
+	.content-dynamic-container {background: #0FF;}
+	.content-dynamic {height:400px}
+	.content-static {background: #CFF}
+	
+	/* some styles that are commonly handled by a reset */
+	ul{margin: 0;padding: 0;}
+	li{list-style-type: none;}
+	
+	/* on to the actual styling */
+	
+	/** modules **/
+	.horizontal-tabs
+	{
+		width: 100%;
+		display: table;
+		table-layout: fixed;
+		text-align: center;
+	}
+	.horizontal-tabs li
+	{
+		display: table-cell;
+	}	
+	.content-dynamic-container,
+	.content-dynamic,
+	.content-static
+	{
+		width: 100%;
+		-webkit-box-sizing: border-box; 
+	     -moz-box-sizing: border-box;    
+	          box-sizing: border-box;         
+	}
+	  .split-2-1 .content-dynamic-container
+		{
+			width: 66%;
+		}
+		.split-2-1 .content-static
+		{
+			width: 34%;
+		}
+	  .with-static.static-right .content-container > div
+		{
+			float: left;
+		}
+		
+		
+	/* States */
+	.inactive-content 
+	{
+	  display: none;
+	}
+	.active-content
+	{
+		display: block;
+	}
+	
+</style>
+
+<div class="temporary-container">
+
+<div class="tabbed-content with-static static-right split-2-1">
+	
+  <!------- < TABS > ---------------->
+  <ul class="tabs horizontal-tabs silver-gradient">
+    <li class="tab active-tab"><a href="#tab1">Agenda</a></li>
+    <li class="tab"><a href="#tab2">Speakers</a></li>
+    <li class="tab"><a href="#tab3">Hotels</a></li>
+    <li class="tab"><a href="#tab4">Register</a></li>
+  </ul>
+  
+  <!------- < Content Container > ---------------->
+  <div class="content-container">
+    <div class="content-dynamic-container">
+    	
+      <div id="tab1" class="content-dynamic">
+        1st div
+      </div>
+      
+      <div id="tab2" class="content-dynamic">
+        2nd div
+      </div>
+      
+      <div id="tab3" class="content-dynamic">
+      	3rd div
+      </div>
+      
+      <div id="tab4" class="content-dynamic">
+        4th div
+      </div>
+    
+		</div>
+    
+    <div class="content-static">
+      Static Content Area
+    </div>
+    
+  </div>
+  
+</div>
+
+</div>
