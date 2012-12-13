@@ -54,16 +54,6 @@
   @import url('c/silver-gradient.css');
 	.temporary-container {width: 950px;margin: 0 auto;}
 	
-	/* temp styles to help differentiate while testing */
-	
-	.content-dynamic-container {background: #0FF;}
-	.content-dynamic {height:400px}
-	.content-static {background: #CFF}
-	#tab1 {background:#066}
-	#tab2 {background:#999}
-	#tab2 {background:#666}
-	#tab4 {background:#444}
-	
 	/* some styles that are commonly handled by a reset */
 	ul{margin: 0;padding: 0;}
 	li{list-style-type: none;}
@@ -119,6 +109,17 @@
 		display: block;
 	}
 	
+	/* dynamic content */
+	.content-dynamic
+	{
+		padding: 0 1.5em 0 2.375em;
+	}
+	/* static-content */
+	.content-static
+	{
+		padding: 0 1em;
+	}
+	
 	/* tabs layout */
 	.tab
 	{
@@ -156,25 +157,69 @@
     <div class="content-dynamic-container">
     	
       <div id="tab1" class="content-dynamic">
-        1st div
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Mauris dictum 
+        nibh at dolor interdum id gravida tortor dignissim. Vivamus nec placerat felis. 
+        Cras gravida, elit ac fermentum adipiscing, augue turpis interdum nulla, nec 
+        laoreet mauris lorem at ante. Nunc nisi diam, mollis id pellentesque vel, 
+        gravida a mauris. Sed risus orci, vestibulum non volutpat dictum, vulputate commodo arcu. 
+        Morbi non odio eget ligula interdum luctus. Nam lacinia, odio eu tempus pulvinar, 
+        ipsum metus posuere elit, quis blandit nibh libero a nibh.</p>
+				<p>Aliquam ut mi sed nisl placerat accumsan. Proin nunc tortor, placerat 
+        sed adipiscing ut, aliquam lacinia massa. Aenean at tellus dui, eu tincidunt mi. 
+        Pellentesque ut lacus nec diam mattis egestas vitae vitae erat. 
+        Nam ligula magna, viverra quis sodales quis, molestie vitae dolor. Ut eget lacus 
+        erat, in porta lacus. Praesent in mauris justo, vel lobortis leo. Aliquam neque lacus, 
+        sodales in dictum eu, mattis quis justo. Suspendisse gravida faucibus rhoncus. 
+        In volutpat arcu faucibus metus ultrices quis rutrum ligula mattis. Vestibulum 
+        sed felis tortor, id tempus felis. Suspendisse potenti. </p>
       </div>
       
       <div id="tab2" class="content-dynamic">
-        2nd div
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam ut augue ut orci 
+        molestie consectetur. Aenean ultricies tempor aliquam. Nam eu magna risus. 
+        Aenean rutrum placerat ligula ut ultrices. Duis id dolor tincidunt velit mollis 
+        cursus quis at neque. Pellentesque placerat tortor tortor. Donec tortor nunc, 
+        dictum eu blandit vitae, tincidunt faucibus orci. Proin fermentum dui at justo 
+        venenatis consequat in eget lorem. </p>
       </div>
       
       <div id="tab3" class="content-dynamic">
-      	3rd div
+      	<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In facilisis aliquam massa, 
+        nec tincidunt urna semper auctor. Pellentesque habitant morbi tristique senectus et netus et 
+        malesuada fames ac turpis egestas. Quisque posuere, augue at consectetur rhoncus, ante 
+        arcu tincidunt nisl, sit amet sodales libero ligula sit amet ligula. Sed quis diam mauris. 
+        Curabitur a erat nec nisl bibendum ullamcorper. Sed laoreet suscipit erat ac tempor. Nulla 
+        non nisl in turpis ullamcorper rhoncus. </p>
       </div>
       
       <div id="tab4" class="content-dynamic">
-        4th div
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed quis turpis a est 
+        tincidunt vehicula. Vivamus porta commodo est vitae faucibus. Donec rhoncus 
+        sollicitudin quam, eu aliquet magna rutrum ut. Vivamus nec mauris est. Nullam eleifend 
+        varius quam eu bibendum. Vestibulum tincidunt aliquet porta. Sed faucibus, sapien quis 
+        molestie consequat, dui lectus laoreet neque, at convallis ante felis tincidunt augue. 
+        Vivamus quis aliquet dui. Quisque justo augue, fermentum quis vestibulum a, congue vel enim. 
+        Integer felis lectus, adipiscing at mattis sit amet, tincidunt nec augue. Proin et ipsum magna, 
+        eu fringilla risus. Donec ut mollis elit. Nulla scelerisque nunc sed ipsum pulvinar quis tincidunt 
+        ligula porta. Suspendisse et turpis eu lectus consequat tristique. Integer vel odio massa, a varius libero.</p>
+				<p>Praesent ipsum sapien, vulputate non porta id, semper ac purus. In volutpat mauris et 
+        ipsum malesuada volutpat. Aliquam et tellus sem, eget condimentum eros. Nunc pretium ultrices 
+        sapien, tincidunt dapibus urna suscipit vitae. Ut arcu nulla, blandit a aliquet at, 
+        facilisis sed sem. Mauris mi leo, elementum eget mollis eu, bibendum in arcu. Nam sit amet 
+        felis et velit pellentesque eleifend. Sed eu lectus massa. In in congue orci. </p>
       </div>
     
 		</div>
     
     <div class="content-static">
-      Static Content Area
+      <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Donec venenatis sagittis ipsum, 
+      sed feugiat mi porta sit amet. Vivamus in justo risus. Mauris placerat placerat enim, eu 
+      scelerisque tortor hendrerit quis. Suspendisse vitae velit diam. Vestibulum velit lacus, 
+      laoreet eget vestibulum at, consequat id lacus. Phasellus sed diam ut neque tristique molestie 
+      nec at ipsum. Curabitur pharetra aliquam mauris, blandit iaculis tellus venenatis sed. Praesent
+       malesuada feugiat nisi at posuere. Nunc et tortor nibh, vel tempor odio. Nunc eros orci, luctus at 
+       malesuada eu, bibendum ornare ipsum. Aliquam pellentesque eleifend magna, vitae convallis erat lobortis 
+       vel. Nam laoreet tristique nulla ut posuere.</p>
     </div>
     
   </div>
